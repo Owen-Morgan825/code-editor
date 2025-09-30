@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>editor</title>
+    <link href="./base-layout.css" rel="stylesheet">
+  </head>
+  <body>
+    <main id="main">
+
+      
+      <header id="toolbar">
+        
+        <div class="menu-spacer" id="file-menu-container">
+          <button class="toolbar-button">File</button>
+          <ul id="fileMenu" class="toolbar-menu">
+            <hr>
+            <li><button id="file-save" class="toolbar-menu-button">Save</button></li>
+            <li><a id="file-download"><button class="toolbar-menu-button">Download File</button></a></li>
+            <li><button id="file-rename" class="toolbar-menu-button">Rename</button></li>
+            <li>
+              <select id="file-set-type-select" class="toolbar-menu-button">
+                <option value="javascript">JavaScript</option>
+                <option value="html" selected>HTML</option>
+                <option value="css">CSS</option>
+                <option value="xml">XML</option>
+                <option value="json">JSON</option>
+              </select>
+            </li>
+            <hr>
+            <!--<li><button id="file-open-dir" class="toolbar-menu-button">Open Directory</button></li> Finish implementing in future update -->
+            <li><label for="file-file-input" id="file-open" class="toolbar-menu-button">Open</label></li>
+            <input type="file" id="file-file-input">
+            <!--<li><button id="file-open-compressed" class="toolbar-menu-button">Open Zipped Folder</button></li> Implement later -->
+            <hr>
+            <li><button id="file-new" class="toolbar-menu-button">New File</button></li>
+            <!--<li><button id="file-new-folder" class="toolbar-menu-button">New Folder</button></li> Implement later-->
+            <!--<li><button id="file-new-project" class="toolbar-menu-button">New Project</button></li> Implement later -->
+            <hr>
+          </ul>
+        </div>
+        
+        <div class="menu-spacer" id="edit-menu-container">
+          <button class="toolbar-button">Edit</button>
+          <ul id="editMenu" class="toolbar-menu">
+            <hr>
+            <li><button id="edit-copy-file" class="toolbar-menu-button">Copy File</button></li>
+            <li><button id="edit-paste" class="toolbar-menu-button">Paste</button></li>
+            <hr>
+          </ul>
+        </div>
+        
+        <div class="menu-spacer"  id="view-menu-container">
+          <button class="toolbar-button">View</button>
+          <ul id="viewMenu" class="toolbar-menu">
+            <hr>
+            <li><button id="view-tab-set-size" class="toolbar-menu-button">Set tab size</button></li>
+            <hr>
+          </ul>
+        </div>
+        
+        <div class="menu-spacer">
+          <button id="settings-button" class="toolbar-button" popovertarget="settings-menu" popovertargetaction="show">Settings</button>
+        </div>
+        
+      </header>
+
+      
+      <dialog id="settings-menu" closedby="closerequest" popover>
+        <div class="settings-modal">
+          <div id="settings-header-container">
+            <p style="text-align: start; vertical-align: middle; height: min-content; width:min-content; flex-grow: 3; padding-left: 20px;">Settings</p>
+            <button id="settings-save-button" class="toolbar-menu-button settings-header-button confirm-button" popovertarget="settings-menu" popovertargetaction="hide">Save</button>
+            <button id="settings-close-button" class="toolbar-menu-button settings-header-button deny-button" popovertarget="settings-menu" popovertargetaction="hide">Close</button>
+          </div>
+          <form id="settings-form" style="display: block; text-align: left; padding: 21px 42px 21px 42px;">
+            <section>
+              <small>Note: settings will only update when the save button is pressed. Changes are not reset when the close button is pressed.</small>
+              <h1>Toolbar</h1>
+              <hr>
+              <section>
+                <h2>File</h2>
+                <label for="settings-toolbar-file-show-menu">Show File Menu</label>
+                <input id="settings-toolbar-file-show-menu" type="checkbox" checked>
+                <br>
+                <small>Can't be accessed elsewhere</small>
+                <br>
+                <br>
+                <label for="settings-toolbar-file-open-live">Open files live</label>
+                <input id="settings-toolbar-file-open-live" type="checkbox">
+                <br>
+                <small>Open files in a state where saving them in the editor updates their copy on-disk. Currently not avalable on Firefox or Safari.</small>
+              </section>
+              <hr>
+              <section>
+                <h2>Edit</h2>
+                <label for="settings-toolbar-edit-show-menu">Show Edit Menu</label>
+                <input id="settings-toolbar-edit-show-menu" type="checkbox" checked>
+                <br>
+                <small>Functions avalable on keyboard</small>
+              </section>
+              <hr>
+              <section>
+                <h2>View</h2>
+                <label for="settings-toolbar-view-show-menu">Show View Menu</label>
+                <input id="settings-toolbar-view-show-menu" type="checkbox" checked>
+                <br>
+                <small>Can be accessed through settings</small>
+              </section>
+            </section>
+            <hr>
+            <section>
+              <h1>Editor</h1>
+              <section>
+                <h2>Styling</h2>
+                <label for="settings-editor-tab-set-size">Set tab size</label>
+                <input id="settings-editor-tab-set-size" type="number">
+              </section>
+            </section>
+            <hr>
+          </form>
+        </div>
+      </dialog>
+
+      <div id="header-spacer" style="width: 100%; height: var(--toolbar-height)"></div>
+
+      <p id="display-filename"></p>
+      
+      <div id="editor-container">
+        <aside id="tab-bar">
+          <button class="toolbar-button">Test</button>
+        </aside>
+      </div>
+      
+      <script type="module" src="settings.js"></script>
+      <script type="module" src="main.js"></script>
+      
+    </main>
+  </body>
+</html>
