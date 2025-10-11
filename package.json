@@ -20,6 +20,7 @@
     "@codemirror/language-data": "^6.5.1",
     "@codemirror/state": "^6.5.2",
     "@codemirror/view": "^6.38.2",
-    "codemirror": "^6.0.2"
+    "codemirror": "^6.0.2",
+    "vite": "^6.3.6"
   }
 }
