@@ -14,4 +14,4 @@ A basic code editor- somewhere between a text editor with syntax highlighting an
 
 ## Why this exists
 
-Chrome Apps are being depreciated, and the text editor I've been using since 2022 is a Chrome App. It's too integrated with the ```chrome``` API avalable to Chromium browser extensions to easily make it work without, so I built this to replace it.
+Chrome Apps are being depreciated, and the text editor I've been using since 2022 (because my Chromebook doesn't have enough storage space to download VS Code and I can't upgrade my computer) is a Chrome App. It's too integrated with the ```chrome``` API avalable to Chromium browser extensions to easily make it work without, so I built this to replace it.
