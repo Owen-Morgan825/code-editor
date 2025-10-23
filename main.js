@@ -282,7 +282,13 @@ async function getDirStructure(dirHandle) {
 }
 
 function getEditorContents(editorView) {
-  return editorView.state.doc.text.join('\n')
+  if(!(editorView.state.doc.text === undefined)) {
+    return editorView.state.doc.text.join('\n');
+  } else {
+    console.log(editorView.state.doc);
+    return editorView.state.doc.children.join('\n');
+  }
+  console.log(editorView.state.doc);
 }
 
 function convertEditorToBlob(editorView, name, type) {
