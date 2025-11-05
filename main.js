@@ -157,7 +157,14 @@ file.setTypeSelect.addEventListener('input', (event) => {
 }); Finish later*/
 
 edit.copyFile.addEventListener('pointerdown', () => {
-  navigator.clipboard.write(editorView.state.doc.text.join('\n'));
+  navigator.clipboard.writeText(getEditorContents(editView));
+});
+
+edit.paste.addEventListener('pointerdown', () => {
+  navigator.clipboard.readText().then((text) => {
+    console.log('clipboard: ', text);
+    //TODO: implement this
+  });
 });
 
 view.tabSetSize.addEventListener('pointerdown', () => {
@@ -186,10 +193,14 @@ window.addEventListener('keydown', (e) => {
 async function saveFile() {
   tabs[currentFile].file = convertEditorToBlob(editView, tabs[currentFile].name, tabs[currentFile].type);
   if(liveEditEnabled) {
-    let stream = await tabs[currentFile].handle.createWritable();
-    stream.seek(0);
-    stream.write(tabs[currentFile].file);
-    stream.close();
+    if(tabs[currentFile].handle !== undefined) {
+      let stream = await tabs[currentFile].handle.createWritable();
+      stream.seek(0);
+      stream.write(tabs[currentFile].file);
+      stream.close();
+    } else {
+      throw new Error("Saving new files when set to open live is not supported yet (devs: implement feature)");
+    }
   }
   URL.revokeObjectURL(tabs[currentFile].file);
   file.download.href = URL.createObjectURL(tabs[currentFile].file);
@@ -285,10 +296,10 @@ function getEditorContents(editorView) {
   if(!(editorView.state.doc.text === undefined)) {
     return editorView.state.doc.text.join('\n');
   } else {
-    console.log(editorView.state.doc);
+    //console.log(editorView.state.doc);
     return editorView.state.doc.children.join('\n');
   }
-  console.log(editorView.state.doc);
+  //console.log(editorView.state.doc);
 }
 
 function convertEditorToBlob(editorView, name, type) {
