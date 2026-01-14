@@ -29,6 +29,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      - name: debug
+        run: ls -a
       - name: Install deps
         run: npm install
       - name: Vite build
