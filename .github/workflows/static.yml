@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: debug
-        run: ls /home/runner/work/code-editor/code-editor
+        run: cat /home/runner/work/code-editor/code-editor/package.json
       - name: Install deps
         run: npm install
       - name: Vite build
