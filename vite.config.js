@@ -3,5 +3,6 @@ export default {
     assetsDir: "./",
     emmitAssets: true
   },
-  base: "./"
+  base: "./",
+  publicDir: "icons"
 }
