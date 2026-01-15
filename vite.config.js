@@ -1,6 +1,6 @@
 export default {
   build: {
-    assetsDir: "./assets"
+    assetsDir: "./"
   },
   base: "./"
 }
