@@ -2,7 +2,7 @@
   "name": "Code Editor",
   "icons": [
     {
-      "src": "./icons/icon_512.png",
+      "src": "./icon_512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
