@@ -40,6 +40,8 @@ let avalableLanguages = {
   json: json
 }
 
+console.log(avalableLanguages);
+
 //get elements
 
 //buttons
@@ -114,6 +116,7 @@ file.openButton.addEventListener('pointerdown', async function() {
       newFile.name = newFile.handle.name;
       newFile.file = await newFile.handle.getFile();
       newFile.type = newFile.file.type;
+      setType(newFile.type);
       let fileText = await newFile.file.text();
       updateEditorDisplay(fileText);
       addTab(newFile);
@@ -129,6 +132,7 @@ file.open.addEventListener('change', async function(event) {
     newFile.file = file.open.files[0];
     newFile.name = file.open.value.slice(12);
     newFile.type = file.open.files[0].type;
+    setType(newFile.type);
     updateEditorDisplay(fileText);
     addTab(newFile);
   }
@@ -143,9 +147,8 @@ file.new.addEventListener('pointerdown', () => {
 });
 
 file.setTypeSelect.addEventListener('input', (event) => {
-  editView.dispatch({
-    effects: language.reconfigure(avalableLanguages[event.target.value]())
-  });
+  tabs[currentFile].type = event.target.value;
+  setType(event.target.value);
 });
 
 /*file.openDir.addEventListener('pointerdown', async function() {
@@ -189,6 +192,27 @@ window.addEventListener('keydown', (e) => {
 });
 
 //utility functions
+
+function setType(type) {
+  console.log('starting SetType()');
+  if(type.includes("/")) {
+    console.log('Type includes /');
+    const keys = Object.keys(fileTypeMap);
+    const values = Object.values(fileTypeMap);
+    const lookupType = keys[values.indexOf(type)];
+    console.log(lookupType);
+    editView.dispatch({
+      effects: language.reconfigure(avalableLanguages[lookupType]())
+    });
+    console.log('Highlighting set');
+  } else {
+    console.log('Type does not include /');
+    editView.dispatch({
+      effects: language.reconfigure(avalableLanguages[type]())
+    });
+    console.log('Highlighting set');
+  }
+}
 
 async function saveFile() {
   tabs[currentFile].file = convertEditorToBlob(editView, tabs[currentFile].name, tabs[currentFile].type);
