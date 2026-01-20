@@ -76,6 +76,7 @@ button {
   font-family: Lexend, Arial, sans-serif;
   font-size: 13.5px;
   font-weight: 200;
+  color: var(--standard-color);
 }
 
 small {
