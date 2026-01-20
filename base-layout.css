@@ -38,7 +38,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* Toolbar-specific styles */
-    --toolbar-background-color: #ffffffaa;
+    --toolbar-background-color: #000000aa;
 
     /* Standard across the editor */
     --standard-border: 1px solid #666666;
