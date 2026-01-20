@@ -227,6 +227,7 @@ ol li {
   margin-bottom: 2px;
   border: var(--standard-border);
   border-radius: var(--standard-border-radius);
+  color: var(--standard-color);
 }
 
 .toolbar-menu-button:hover {
