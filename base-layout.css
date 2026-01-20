@@ -290,6 +290,12 @@ ol li {
   overflow: scroll !important;
   max-width: 90%;
 }
+.cm-gutter {
+  background-color: var(--standard-background-color) !important;
+}
+.cm-gutterElement {
+  color: var(--standard-color) !important;
+}
 
 .cm-activeLineGutter {
   background-color: var(--standard-highlight-transparent-color) !important;
