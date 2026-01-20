@@ -4,6 +4,7 @@
   --toolbar-button-height: 20px;
   --toolbar-button-width: 42px;
   --toolbar-height: 30px;
+  --toolbar-background-color: #ffffffaa;
 
   /* Standard across the editor */
   --standard-border: 1px solid #F6F6F6;
@@ -19,6 +20,16 @@
 
   --standard-blur: 10px;
 
+  --small-color: #666666;
+  
+  --popover-background-color: #000000aa;
+  
+  --checkbox-text-color: #000000;
+  --checkbox-disabled-border-color: #000000;
+
+  --settings-background-color: #ffffff;
+  --tabbar-button-color: #ffffff;
+  
   font-family: Lexend, Arial, sans-serif;
   font-size: 13.5px;
   font-weight: 200;
@@ -27,12 +38,10 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* Toolbar-specific styles */
-    --toolbar-button-height: 20px;
-    --toolbar-button-width: 42px;
-    --toolbar-height: 30px;
+    --toolbar-background-color: #ffffffaa;
 
     /* Standard across the editor */
-    --standard-border: 1px solid #F6F6F6;
+    --standard-border: 1px solid #666666;
     --standard-highlight-color: #c4c4ff;
     --standard-confirm-color: #caffc4;
     --standard-deny-color: #ffc4c4;
@@ -40,14 +49,17 @@
     --standard-highlight-border: 1px solid #b3b3ee;
     --standard-confirm-border: 1px solid #b1ffa8;
     --standard-deny-border: 1px solid #ffa8a8;
-    --standard-border-radius: 5px;
-    --standard-button-color: #dadada;
+    --standard-button-color: #636363;
 
-    --standard-blur: 10px;
+    --small-color: #d4d4d4;
+  
+    --popover-background-color: #000000aa;
+  
+    --checkbox-text-color: #d4d4d4;
+    --checkbox-disabled-border-color: #ffffff;
 
-    font-family: Lexend, Arial, sans-serif;
-    font-size: 13.5px;
-    font-weight: 200;
+    --settings-background-color: #3b3b3b;
+    --tabbar-button-color: #3b3b3b;
   }
 }
 
@@ -63,7 +75,7 @@ button {
 
 small {
   font-size: 10px;
-  color: #666666;
+  color: var(--small-color);
 }
 
 ol {
@@ -93,7 +105,7 @@ h3 {
 [popover]:popover-open {
   position: fixed;
   border: none;
-  background-color: #000000aa;
+  background-color: var(--popover-background-color);
   width: 100vw;
   height: 100vh;
   text-align: center;
@@ -137,7 +149,7 @@ input[type="checkbox"] {
   border: var(--standard-deny-border);
   vertical-align: text-top;
   background-color: var(--standard-deny-color);
-  color: #000000;
+  color: var(--checkbox-text-color);
 }
 
 input[type="checkbox"]::before {
@@ -157,7 +169,7 @@ input[type="checkbox"]:checked {
 }
 
 input[type="checkbox"]:disabled {
-  border-color: black;
+  border-color: var(--checkbox-disabled-border-color);
   background: var(--standard-highlight-transparent-color);
   color: var(--standard-highlight-transparent-color);
 }
@@ -191,7 +203,7 @@ ol li {
   min-width: min-content;
   width: 50%;
   height: max-content;
-  background-color: #ffffff;
+  background-color: var(--settings-background-color);
   border: var(--standard-border);
   border-radius: var(--standard-border-radius);
   justify-content: center;
@@ -293,7 +305,7 @@ ol li {
 .tabbar-button {
   border: var(--standard-border);
   border-radius: var(--standard-border-radius);
-  background-color: #FFFFFF;
+  background-color: var(--tabbar-button-color);
   width: 70%;
   min-width: min-content;
 }
@@ -337,7 +349,7 @@ ol li {
   z-index: 100;
   /*backdrop-filter: blur(10px);*/
   
-  background-color: #FFFFFFaa;
+  background-color: var(--toolbar-background-color);
   border: var(--standard-border);
   border-radius: var(--standard-border-radius);
 }
