@@ -30,6 +30,8 @@
 
   --settings-background-color: #ffffff;
   --tabbar-button-color: #ffffff;
+
+  --standard-background-color: #ffffff;
   
   font-family: Lexend, Arial, sans-serif;
   font-size: 13.5px;
@@ -63,7 +65,8 @@
     --settings-background-color: #3b3b3b;
     --tabbar-button-color: #3b3b3b;
 
-    background-color: #000000;
+    --standard-background-color: #000000;
+    background-color: var(--standard-background-color);
     color: #d4d4d4;
   }
 }
