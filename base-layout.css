@@ -17,6 +17,7 @@
   --standard-deny-border: 1px solid #ffa8a8;
   --standard-border-radius: 5px;
   --standard-button-color: #fafafa;
+  --standard-color: #000000;
 
   --standard-blur: 10px;
 
@@ -50,6 +51,7 @@
     --standard-confirm-border: 1px solid #b1ffa8;
     --standard-deny-border: 1px solid #ffa8a8;
     --standard-button-color: #636363;
+    --standard-color: #ffffff;
 
     --small-color: #d4d4d4;
   
@@ -309,6 +311,7 @@ ol li {
   border: var(--standard-border);
   border-radius: var(--standard-border-radius);
   background-color: var(--tabbar-button-color);
+  color: var(--standard-color);
   width: 70%;
   min-width: min-content;
 }
