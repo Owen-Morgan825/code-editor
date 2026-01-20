@@ -60,6 +60,9 @@
 
     --settings-background-color: #3b3b3b;
     --tabbar-button-color: #3b3b3b;
+
+    background-color: #000000;
+    color: #d4d4d4;
   }
 }
 
