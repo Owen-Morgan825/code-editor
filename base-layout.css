@@ -24,6 +24,33 @@
   font-weight: 200;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Toolbar-specific styles */
+    --toolbar-button-height: 20px;
+    --toolbar-button-width: 42px;
+    --toolbar-height: 30px;
+
+    /* Standard across the editor */
+    --standard-border: 1px solid #F6F6F6;
+    --standard-highlight-color: #c4c4ff;
+    --standard-confirm-color: #caffc4;
+    --standard-deny-color: #ffc4c4;
+    --standard-highlight-transparent-color: #c4c4ff44;
+    --standard-highlight-border: 1px solid #b3b3ee;
+    --standard-confirm-border: 1px solid #b1ffa8;
+    --standard-deny-border: 1px solid #ffa8a8;
+    --standard-border-radius: 5px;
+    --standard-button-color: #dadada;
+
+    --standard-blur: 10px;
+
+    font-family: Lexend, Arial, sans-serif;
+    font-size: 13.5px;
+    font-weight: 200;
+  }
+}
+
 /* Element styling */
 
 button {
