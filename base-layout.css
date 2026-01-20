@@ -106,6 +106,7 @@ h3 {
 
 [popover] {
   display: none;
+  color: var(--standard-color);
 }
 
 [popover]:popover-open {
