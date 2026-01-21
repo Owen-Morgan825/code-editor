@@ -325,7 +325,6 @@ ol li {
   background-color: var(--tabbar-button-color);
   color: var(--standard-color);
   width: 70%;
-  max-width: 25vw;
   overflow-x: hidden;
 }
 
@@ -389,7 +388,7 @@ ol li {
 #tab-bar {
   flex-shrink: 2;
   width: min-content;
-  max-width: max-content;
+  max-width: 25vw;
   height: min-content;
   display: block;
   padding: 1px 6px 1px 6px;
