@@ -325,7 +325,8 @@ ol li {
   background-color: var(--tabbar-button-color);
   color: var(--standard-color);
   width: 70%;
-  min-width: min-content;
+  max-width: 25%;
+  overflow-x: hidden;
 }
 
 .tabbar-button:hover {
